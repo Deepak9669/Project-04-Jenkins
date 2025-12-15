@@ -95,5 +95,7 @@ public interface ORSView {
 
 	public String PATIENT_LIST_VIEW = PAGE_FOLDER + "/PatientListView.jsp";
 	public String PATIENT_LIST_CTL = APP_CONTEXT+ "/ctl/PatientListCtl";
+	
+
 
 }
