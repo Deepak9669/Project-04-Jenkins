@@ -90,10 +90,10 @@ public interface ORSView {
 
 	public String JAVA_DOC = "/ORSProject-04/doc/index.html";
 
-	public String USER1_VIEW = PAGE_FOLDER + "/User1View.jsp";
-	public String USER1_CTL = APP_CONTEXT + "/User1Ctl";
+	public String PATIENT_VIEW = PAGE_FOLDER + "/PatientView.jsp";
+	public String PATIENT_CTL = APP_CONTEXT + "/ctl/PatientCtl";
 
-	public String USER1_LIST_VIEW = PAGE_FOLDER + "/User1ListView.jsp";
-	public String USER1_LIST_CTL = PAGE_FOLDER + "/User1ListCtl";
+	public String PATIENT_LIST_VIEW = PAGE_FOLDER + "/PatientListView.jsp";
+	public String PATIENT_LIST_CTL = APP_CONTEXT+ "/ctl/PatientListCtl";
 
 }
