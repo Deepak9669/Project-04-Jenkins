@@ -1,6 +1,7 @@
 package in.co.rays.proj4.controller;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -40,6 +41,18 @@ public class UserRegistrationCtl extends BaseCtl {
      * @param request HTTP request
      * @return true if validation passes, otherwise false
      */
+    @Override
+    protected void preload(HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		
+    	HashMap<String, String> map = new HashMap<String, String>();
+	    
+		map.put("Female", "Female");
+		map.put("Male", "Male");
+		
+		request.setAttribute("map", map);
+	}
+    
     @Override
     protected boolean validate(HttpServletRequest request) {
 

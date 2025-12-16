@@ -1,4 +1,6 @@
+# Ignore MySQL data
 mysql-data/
-ORSProject-04/mysql-data/
-*sock
+
+# Ignore build folders
 target/
+*.class
