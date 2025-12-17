@@ -10,7 +10,7 @@
 <%@page import="in.co.rays.proj4.util.ServletUtility"%>
 <html>
 <head>
-<title>Add Patient</title>
+<title>Add Doctor</title>
 <link rel="icon" type="image/png"
 	href="<%=ORSView.APP_CONTEXT%>/img/logo.png" sizes="16x16" />
 </head>
@@ -35,7 +35,7 @@
 				%>Add<%
 					}
 				%>
-				Patient
+				Doctor
 			</h1>
 
 			<div style="height: 15px; margin-bottom: 12px">
