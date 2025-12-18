@@ -1,6 +1,3 @@
-# Ignore MySQL data
-mysql-data/
-
-# Ignore build folders
+/target/
 target/
-*.class
+mysql-data/
