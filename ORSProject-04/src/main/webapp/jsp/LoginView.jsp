@@ -23,7 +23,7 @@
 
 		<div align="center">
 			<h1>Login</h1>
-			
+			<h1>20/12/2025</h1>
 			<div style="height: 15px; margin-bottom: 12px">
 				<H3 align="center">
 					<font color="green"> <%=ServletUtility.getSuccessMessage(request)%>
@@ -38,7 +38,7 @@
 			<table>
 				<tr>
 					<th>Login ID:</th>
-					<td><input type="text" name="login20/12/2025" placeholder="Enter your Login Id"
+					<td><input type="text" name="login" placeholder="Enter your Login Id"
 						value="<%=DataUtility.getStringData(bean.getLogin())%>"></td>
 					<td style="position: fixed;"><font color="red"> <%=ServletUtility.getErrorMessage("login", request)%></font></td>
 				</tr>
