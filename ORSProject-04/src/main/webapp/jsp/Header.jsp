@@ -60,11 +60,11 @@
 	<a href="<%=ORSView.PATIENT_LIST_CTL%>"><b>Patient List</b></a> |
 	<a href="<%=ORSView.DOCTOR_CTL%>"><b>Add Doctor</b></a> |
 	<a href="<%=ORSView.DOCTOR_LIST_CTL%>"><b>Doctor List</b></a> |
-<<<<<<< HEAD
-=======
-	
->>>>>>> 2b411bedf48b8b0758962bc2fb16fdf4354e5ad8
-	
+	<a href="<%=ORSView.ACCOUNT_CTL%>"><b>Add Account</b></a> |
+	<a href="<%=ORSView.ACCOUNT_LIST_CTL%>"><b>Account List</b></a> |
+	<a href="<%=ORSView.INVENTORY_CTL%>"><b>Add Inventory</b></a> |
+	<a href="<%=ORSView.INVENTORY_LIST_CTL%>"><b>Inventory List</b></a> |
+
 
 
 	<!-- College menus (Admin only since College role removed) -->
