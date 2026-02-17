@@ -370,6 +370,7 @@ public class DocterModel {
 		}
 
 		return list;
+		
 	}
 
 	/**
@@ -395,5 +396,9 @@ public class DocterModel {
 
 	    return bean;
 	}
+<<<<<<< HEAD
 
 }
+=======
+}
+>>>>>>> bcae06adec44f90420aa3e7dcaef137d0d6e5971
