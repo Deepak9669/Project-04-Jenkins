@@ -1,6 +1,7 @@
 package in.co.rays.proj4.controller;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -12,157 +13,165 @@ import in.co.rays.proj4.bean.BaseBean;
 import in.co.rays.proj4.bean.InventoryBean;
 import in.co.rays.proj4.exception.ApplicationException;
 import in.co.rays.proj4.model.InventoryModel;
+import in.co.rays.proj4.model.RoleModel;
 import in.co.rays.proj4.util.DataUtility;
 import in.co.rays.proj4.util.PropertyReader;
 import in.co.rays.proj4.util.ServletUtility;
 
 @WebServlet(name = "/InventoryListCtl", urlPatterns = { "/ctl/InventoryListCtl" })
 public class InventoryListCtl extends BaseCtl {
+	
+	
+	 @Override
+	    protected void preload(HttpServletRequest request) {
 
-    /* ================= POPULATE BEAN ================= */
+	        HashMap<String, String> map = new HashMap<String, String>();
+	        map.put("helicopter", "helicopter");
+	        map.put("car", "car");
+	        map.put("jeep", "jeep");
 
-    @Override
-    protected BaseBean populateBean(HttpServletRequest request) {
+	        request.setAttribute("map", map);
+	    }
 
-        InventoryBean bean = new InventoryBean();
+	/* ================= POPULATE BEAN ================= */
 
-        bean.setId(DataUtility.getLong(request.getParameter("id")));
-        bean.setSupplierName(DataUtility.getString(request.getParameter("supplierName")));
-        bean.setProduct(DataUtility.getString(request.getParameter("product")));
+	@Override
+	protected BaseBean populateBean(HttpServletRequest request) {
 
-        return bean;
-    }
+		InventoryBean bean = new InventoryBean();
 
-    /* ================= DO GET ================= */
+		bean.setId(DataUtility.getLong(request.getParameter("id")));
+		bean.setSupplierName(DataUtility.getString(request.getParameter("supplierName")));
+		bean.setProduct(DataUtility.getString(request.getParameter("product")));
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+		return bean;
+	}
 
-        int pageNo = 1;
-        int pageSize = DataUtility.getInt(PropertyReader.getValue("page.size"));
+	/* ================= DO GET ================= */
 
-        InventoryBean bean = (InventoryBean) populateBean(request);
-        InventoryModel model = new InventoryModel();
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-        try {
+		int pageNo = 1;
+		int pageSize = DataUtility.getInt(PropertyReader.getValue("page.size"));
 
-            List<InventoryBean> list = model.search(bean, pageNo, pageSize);
-            List<InventoryBean> next = model.search(bean, pageNo + 1, pageSize);
+		InventoryBean bean = (InventoryBean) populateBean(request);
+		InventoryModel model = new InventoryModel();
 
-            if (list == null || list.isEmpty()) {
-                ServletUtility.setErrorMessage("No record found", request);
-            }
+		try {
 
-            ServletUtility.setList(list, request);
-            ServletUtility.setPageNo(pageNo, request);
-            ServletUtility.setPageSize(pageSize, request);
-            ServletUtility.setBean(bean, request);
-            request.setAttribute("nextListSize", next.size());
+			List<InventoryBean> list = model.search(bean, pageNo, pageSize);
+			List<InventoryBean> next = model.search(bean, pageNo + 1, pageSize);
 
-            ServletUtility.forward(getView(), request, response);
+			if (list == null || list.isEmpty()) {
+				ServletUtility.setErrorMessage("No record found", request);
+			}
 
-        } catch (ApplicationException e) {
-            e.printStackTrace();
-            ServletUtility.handleException(e, request, response);
-            return;
-        }
-    }
+			ServletUtility.setList(list, request);
+			ServletUtility.setPageNo(pageNo, request);
+			ServletUtility.setPageSize(pageSize, request);
+			ServletUtility.setBean(bean, request);
+			request.setAttribute("nextListSize", next.size());
 
-    /* ================= DO POST ================= */
+			ServletUtility.forward(getView(), request, response);
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+		} catch (ApplicationException e) {
+			e.printStackTrace();
+			ServletUtility.handleException(e, request, response);
+			return;
+		}
+	}
 
-        List list = null;
-        List next = null;
+	/* ================= DO POST ================= */
 
-        int pageNo = DataUtility.getInt(request.getParameter("pageNo"));
-        int pageSize = DataUtility.getInt(request.getParameter("pageSize"));
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-        pageNo = (pageNo == 0) ? 1 : pageNo;
-        pageSize = (pageSize == 0)
-                ? DataUtility.getInt(PropertyReader.getValue("page.size"))
-                : pageSize;
+		List list = null;
+		List next = null;
 
-        InventoryBean bean = (InventoryBean) populateBean(request);
-        InventoryModel model = new InventoryModel();
+		int pageNo = DataUtility.getInt(request.getParameter("pageNo"));
+		int pageSize = DataUtility.getInt(request.getParameter("pageSize"));
 
-        String op = DataUtility.getString(request.getParameter("operation"));
-        String[] ids = request.getParameterValues("ids");
+		pageNo = (pageNo == 0) ? 1 : pageNo;
+		pageSize = (pageSize == 0) ? DataUtility.getInt(PropertyReader.getValue("page.size")) : pageSize;
 
-        try {
+		InventoryBean bean = (InventoryBean) populateBean(request);
+		InventoryModel model = new InventoryModel();
 
-            if (OP_SEARCH.equalsIgnoreCase(op)
-                    || OP_NEXT.equalsIgnoreCase(op)
-                    || OP_PREVIOUS.equalsIgnoreCase(op)) {
+		String op = DataUtility.getString(request.getParameter("operation"));
+		String[] ids = request.getParameterValues("ids");
 
-                if (OP_SEARCH.equalsIgnoreCase(op)) {
-                    pageNo = 1;
-                } else if (OP_NEXT.equalsIgnoreCase(op)) {
-                    pageNo++;
-                } else if (OP_PREVIOUS.equalsIgnoreCase(op) && pageNo > 1) {
-                    pageNo--;
-                }
+		try {
 
-            } else if (OP_NEW.equalsIgnoreCase(op)) {
+			if (OP_SEARCH.equalsIgnoreCase(op) || OP_NEXT.equalsIgnoreCase(op) || OP_PREVIOUS.equalsIgnoreCase(op)) {
 
-                ServletUtility.redirect(ORSView.INVENTORY_CTL, request, response);
-                return;
+				if (OP_SEARCH.equalsIgnoreCase(op)) {
+					pageNo = 1;
+				} else if (OP_NEXT.equalsIgnoreCase(op)) {
+					pageNo++;
+				} else if (OP_PREVIOUS.equalsIgnoreCase(op) && pageNo > 1) {
+					pageNo--;
+				}
 
-            } else if (OP_DELETE.equalsIgnoreCase(op)) {
+			} else if (OP_NEW.equalsIgnoreCase(op)) {
 
-                pageNo = 1;
+				ServletUtility.redirect(ORSView.INVENTORY_CTL, request, response);
+				return;
 
-                if (ids != null && ids.length > 0) {
+			} else if (OP_DELETE.equalsIgnoreCase(op)) {
 
-                    InventoryBean deleteBean = new InventoryBean();
+				pageNo = 1;
 
-                    for (String id : ids) {
-                        deleteBean.setId(DataUtility.getLong(id));
-                        model.delete(deleteBean);
-                    }
+				if (ids != null && ids.length > 0) {
 
-                    ServletUtility.setSuccessMessage("Inventory deleted successfully", request);
+					InventoryBean deleteBean = new InventoryBean();
 
-                } else {
-                    ServletUtility.setErrorMessage("Select at least one record", request);
-                }
+					for (String id : ids) {
+						deleteBean.setId(DataUtility.getLong(id));
+						model.delete(deleteBean);
+					}
 
-            } else if (OP_RESET.equalsIgnoreCase(op)
-                    || OP_BACK.equalsIgnoreCase(op)) {
+					ServletUtility.setSuccessMessage("Inventory deleted successfully", request);
 
-                ServletUtility.redirect(ORSView.INVENTORY_LIST_CTL, request, response);
-                return;
-            }
+				} else {
+					ServletUtility.setErrorMessage("Select at least one record", request);
+				}
 
-            list = model.search(bean, pageNo, pageSize);
-            next = model.search(bean, pageNo + 1, pageSize);
+			} else if (OP_RESET.equalsIgnoreCase(op) || OP_BACK.equalsIgnoreCase(op)) {
 
-            if (list == null || list.isEmpty()) {
-                ServletUtility.setErrorMessage("No record found", request);
-            }
+				ServletUtility.redirect(ORSView.INVENTORY_LIST_CTL, request, response);
+				return;
+			}
 
-            ServletUtility.setList(list, request);
-            ServletUtility.setPageNo(pageNo, request);
-            ServletUtility.setPageSize(pageSize, request);
-            ServletUtility.setBean(bean, request);
-            request.setAttribute("nextListSize", next.size());
+			list = model.search(bean, pageNo, pageSize);
+			next = model.search(bean, pageNo + 1, pageSize);
 
-            ServletUtility.forward(getView(), request, response);
+			if (list == null || list.isEmpty()) {
+				ServletUtility.setErrorMessage("No record found", request);
+			}
 
-        } catch (ApplicationException e) {
-            e.printStackTrace();
-            ServletUtility.handleException(e, request, response);
-            return;
-        }
-    }
+			ServletUtility.setList(list, request);
+			ServletUtility.setPageNo(pageNo, request);
+			ServletUtility.setPageSize(pageSize, request);
+			ServletUtility.setBean(bean, request);
+			request.setAttribute("nextListSize", next.size());
 
-    /* ================= VIEW ================= */
+			ServletUtility.forward(getView(), request, response);
 
-    @Override
-    protected String getView() {
-        return ORSView.INVENTORY_LIST_VIEW;
-    }
+		} catch (ApplicationException e) {
+			e.printStackTrace();
+			ServletUtility.handleException(e, request, response);
+			return;
+		}
+	}
+
+	/* ================= VIEW ================= */
+
+	@Override
+	protected String getView() {
+		return ORSView.INVENTORY_LIST_VIEW;
+	}
 }

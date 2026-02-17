@@ -1,3 +1,5 @@
+<%@page import="in.co.rays.proj4.util.HTMLUtility"%>
+<%@page import="java.util.HashMap"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
 <%@page import="in.co.rays.proj4.controller.InventoryListCtl"%>
@@ -44,6 +46,8 @@
 				int index = ((pageNo - 1) * pageSize) + 1;
 				int nextListSize = DataUtility.getInt(request.getAttribute("nextListSize").toString());
 
+				HashMap<String, String> map = (HashMap<String, String>) request.getAttribute("map");
+
 				List<InventoryBean> list = (List<InventoryBean>) ServletUtility.getList(request);
 
 				Iterator<InventoryBean> it = list.iterator();
@@ -61,9 +65,7 @@
 					<td align="center"><label><b>Supplier :</b></label> <input
 						type="text" name="supplierName"
 						value="<%=ServletUtility.getParameter("supplierName", request)%>">
-						&emsp; <label><b>Product :</b></label> <input type="text"
-						name="product"
-						value="<%=ServletUtility.getParameter("product", request)%>">
+						&emsp; <label><b>Product :</b></label> <%=HTMLUtility.getList("product", String.valueOf(bean.getProduct()), map)%>
 						&emsp; <input type="submit" name="operation"
 						value="<%=InventoryListCtl.OP_SEARCH%>"> <input
 						type="submit" name="operation"

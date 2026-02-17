@@ -1,5 +1,2 @@
-mysql-data/
-target/
-*.log
-*.sock
-
+/target/
+/mysql-data/
