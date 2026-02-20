@@ -60,21 +60,15 @@
 	<a href="<%=ORSView.PATIENT_LIST_CTL%>"><b>Patient List</b></a> |
 	<a href="<%=ORSView.DOCTOR_CTL%>"><b>Add Doctor</b></a> |
 	<a href="<%=ORSView.DOCTOR_LIST_CTL%>"><b>Doctor List</b></a> |
-<<<<<<< HEAD
 	<a href="<%=ORSView.ACCOUNT_CTL%>"><b>Add Account</b></a> |
 	<a href="<%=ORSView.ACCOUNT_LIST_CTL%>"><b>Account List</b></a> |
 	<a href="<%=ORSView.INVENTORY_CTL%>"><b>Add Inventory</b></a> |
 	<a href="<%=ORSView.INVENTORY_LIST_CTL%>"><b>Inventory List</b></a> |
+	<a href="<%=ORSView.QUEUE_CTL%>"><b>Add Queue</b></a> |
+	<a href="<%=ORSView.QUEUE_LIST_CTL%>"><b>Queue List</b></a> |
+	<a href="<%=ORSView.FAQ_CTL%>"><b>Add Faq</b></a> |
+	<a href="<%=ORSView.FAQ_LIST_CTL%>"><b>Faq List</b></a> |
 
-=======
-
-	<a href="<%=ORSView.ACCOUNT_CTL%>"><b>Add Account</b></a> |
-	<a href="<%=ORSView.ACCOUNT_LIST_CTL%>"><b>Account List</b></a> |
-
-
-
-	
->>>>>>> bcae06adec44f90420aa3e7dcaef137d0d6e5971
 
 
 	<!-- College menus (Admin only since College role removed) -->

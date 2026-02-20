@@ -136,6 +136,5 @@ public class DoctorBean extends BaseBean {
     @Override
     public String getKey() {
         return expertise;
-        
     }
 }

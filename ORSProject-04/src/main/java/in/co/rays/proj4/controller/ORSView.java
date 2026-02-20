@@ -90,16 +90,12 @@ public interface ORSView {
 
 	public String JAVA_DOC = "/ORSProject-04/doc/index.html";
 
+	public String PATIENT_VIEW = PAGE_FOLDER + "/PatientView.jsp";
+	public String PATIENT_CTL = APP_CONTEXT + "/ctl/PatientCtl";
 
-<<<<<<< HEAD
 	public String PATIENT_LIST_VIEW = PAGE_FOLDER + "/PatientListView.jsp";
 	public String PATIENT_LIST_CTL = APP_CONTEXT + "/ctl/PatientListCtl";
 
-=======
-
-
-	
->>>>>>> bcae06adec44f90420aa3e7dcaef137d0d6e5971
 	public String DOCTOR_VIEW = PAGE_FOLDER + "/DoctorView.jsp";
 	public String DOCTOR_CTL = APP_CONTEXT + "/ctl/DoctorCtl";
 
@@ -121,31 +117,18 @@ public interface ORSView {
 	public String INVENTORY_VIEW = PAGE_FOLDER + "/InventoryView.jsp";
 	public String INVENTORY_CTL = APP_CONTEXT + "/ctl/InventoryCtl";
 
-<<<<<<< HEAD
 	public String INVENTORY_LIST_VIEW = PAGE_FOLDER + "/InventoryListView.jsp";
 	public String INVENTORY_LIST_CTL = APP_CONTEXT + "/ctl/InventoryListCtl";
-=======
-// ================== PATIENT MODULE ==================
+	
+	public String QUEUE_VIEW = PAGE_FOLDER + "/QueueView.jsp";
+	public String QUEUE_CTL = APP_CONTEXT + "/ctl/QueueCtl";
 
-public String PATIENT_VIEW = PAGE_FOLDER + "/PatientView.jsp";
-public String PATIENT_CTL = APP_CONTEXT + "/ctl/PatientCtl";
+	public String QUEUE_LIST_VIEW = PAGE_FOLDER + "/QueueListView.jsp";
+	public String QUEUE_LIST_CTL = APP_CONTEXT + "/ctl/QueueListCtl";
+	
+	public String FAQ_VIEW = PAGE_FOLDER + "/FaqView.jsp";
+	public String FAQ_CTL = APP_CONTEXT + "/ctl/FaqCtl";
 
-public String PATIENT_LIST_VIEW = PAGE_FOLDER + "/PatientListView.jsp";
-public String PATIENT_LIST_CTL = APP_CONTEXT + "/ctl/PatientListCtl";
-
-
-
-
-	public String ACCOUNT_VIEW = PAGE_FOLDER + "/AccountView.jsp";
-	public String ACCOUNT_CTL = APP_CONTEXT + "/ctl/AccountCtl";
-
-	public String ACCOUNT_LIST_VIEW = PAGE_FOLDER + "/AccountListView.jsp";
-	public String ACCOUNT_LIST_CTL = APP_CONTEXT + "/ctl/AccountListCtl";
-
-	public String CUSTOMER_VIEW = PAGE_FOLDER + "/CustomerView.jsp";
-	public String CUSTOMER_CTL = APP_CONTEXT + "/ctl/customerCtl";
-
-	public String CUSTOMER_LIST_VIEW = PAGE_FOLDER + "/CustomerListView.jsp";
-	public String CUSTOMER_LIST_CTL = APP_CONTEXT + "/ctl/CustomerListCtl";
->>>>>>> bcae06adec44f90420aa3e7dcaef137d0d6e5971
+	public String FAQ_LIST_VIEW = PAGE_FOLDER + "/FaqListView.jsp";
+	public String FAQ_LIST_CTL = APP_CONTEXT + "/ctl/FaqListCtl";
 }

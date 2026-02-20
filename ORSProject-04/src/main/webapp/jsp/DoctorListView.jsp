@@ -154,12 +154,4 @@
 	</div>
 	<%@ include file="Footer.jsp"%>
 </body>
-<<<<<<< HEAD
 </html>
-=======
-<<<<<<< HEAD
-</html>
-=======
-</html>
->>>>>>> 3688eb8f39ce8a09dde7a441b05719e5b2706dc5
->>>>>>> bcae06adec44f90420aa3e7dcaef137d0d6e5971
