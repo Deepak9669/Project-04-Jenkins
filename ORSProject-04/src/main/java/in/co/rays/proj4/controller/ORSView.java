@@ -113,22 +113,64 @@ public interface ORSView {
 
 	public String CUSTOMER_LIST_VIEW = PAGE_FOLDER + "/CustomerListView.jsp";
 	public String CUSTOMER_LIST_CTL = APP_CONTEXT + "/ctl/CustomerListCtl";
-	
+
 	public String INVENTORY_VIEW = PAGE_FOLDER + "/InventoryView.jsp";
 	public String INVENTORY_CTL = APP_CONTEXT + "/ctl/InventoryCtl";
 
 	public String INVENTORY_LIST_VIEW = PAGE_FOLDER + "/InventoryListView.jsp";
 	public String INVENTORY_LIST_CTL = APP_CONTEXT + "/ctl/InventoryListCtl";
-	
+
 	public String QUEUE_VIEW = PAGE_FOLDER + "/QueueView.jsp";
 	public String QUEUE_CTL = APP_CONTEXT + "/ctl/QueueCtl";
 
 	public String QUEUE_LIST_VIEW = PAGE_FOLDER + "/QueueListView.jsp";
 	public String QUEUE_LIST_CTL = APP_CONTEXT + "/ctl/QueueListCtl";
-	
+
 	public String FAQ_VIEW = PAGE_FOLDER + "/FaqView.jsp";
 	public String FAQ_CTL = APP_CONTEXT + "/ctl/FaqCtl";
 
 	public String FAQ_LIST_VIEW = PAGE_FOLDER + "/FaqListView.jsp";
 	public String FAQ_LIST_CTL = APP_CONTEXT + "/ctl/FaqListCtl";
+
+	public String ASSET_VIEW = PAGE_FOLDER + "/AssetView.jsp";
+	public String ASSET_CTL = APP_CONTEXT + "/ctl/AssetCtl";
+
+	public String ASSET_LIST_VIEW = PAGE_FOLDER + "/AssetListView.jsp";
+	public String ASSET_LIST_CTL = APP_CONTEXT + "/ctl/AssetListCtl";
+
+	public String CLIENT_VIEW = PAGE_FOLDER + "/ClientView.jsp";
+	public String CLIENT_CTL = APP_CONTEXT + "/ctl/ClientCtl";
+
+	public String CLIENT_LIST_VIEW = PAGE_FOLDER + "/ClientListView.jsp";
+	public String CLIENT_LIST_CTL = APP_CONTEXT + "/ctl/ClientListCtl";
+
+	public String NOTIFICATION_VIEW = PAGE_FOLDER + "/NotificationView.jsp";
+	public String NOTIFICATION_CTL = APP_CONTEXT + "/ctl/NotificationCtl";
+
+	public String NOTIFICATION_LIST_VIEW = PAGE_FOLDER + "/NotificationListView.jsp";
+	public String NOTIFICATION_LIST_CTL = APP_CONTEXT + "/ctl/NotificationListCtl";
+
+	public String HOTELBOOKING_VIEW = PAGE_FOLDER + "/HotelBookingView.jsp";
+	public String HOTELBOOKING_CTL = APP_CONTEXT + "/ctl/HotelBookingCtl";
+
+	public String HOTELBOOKING_LIST_VIEW = PAGE_FOLDER + "/HotelBookingListView.jsp";
+	public String HOTELBOOKING_LIST_CTL = APP_CONTEXT + "/ctl/HotelBookingListCtl";
+
+	public String TRIP_VIEW = PAGE_FOLDER + "/TripView.jsp";
+	public String TRIP_CTL = APP_CONTEXT + "/ctl/TripCtl";
+
+	public String TRIP_LIST_VIEW = PAGE_FOLDER + "/TripListView.jsp";
+	public String TRIP_LIST_CTL = APP_CONTEXT + "/ctl/TripListCtl";
+
+	public String BROKER_VIEW = PAGE_FOLDER + "/BrokerView.jsp";
+	public String BROKER_CTL = APP_CONTEXT + "/ctl/BrokerCtl";
+
+	public String BROKER_LIST_VIEW = PAGE_FOLDER + "/BrokerListView.jsp";
+	public String BROKER_LIST_CTL = APP_CONTEXT + "/ctl/BrokerListCtl";
+	
+	public String STOCK_LIST_VIEW = PAGE_FOLDER + "/StockListView.jsp";
+	public String STOCK_LIST_CTL = APP_CONTEXT + "/ctl/StockListCtl";
+	
+	public String STOCK_VIEW = PAGE_FOLDER + "/StockView.jsp";
+	public String STOCK_CTL = APP_CONTEXT + "/ctl/StockCtl";
 }

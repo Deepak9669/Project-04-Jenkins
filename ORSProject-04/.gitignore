@@ -1,27 +1,4 @@
-# MySQL runtime / docker data
 mysql-data/
 ORSProject-04/mysql-data/
-*.sock
-
-# Eclipse
-.metadata/
-.project
-.classpath
-.settings/
-
-# Maven / Build
+*sock
 target/
-*.class
-
-# Tomcat / Server
-**/tmp*/
-**/work/
-**/logs/
-
-# OS
-.DS_Store
-Thumbs.db
-
-# MySQL runtime data
-mysql-data/
-*.sock

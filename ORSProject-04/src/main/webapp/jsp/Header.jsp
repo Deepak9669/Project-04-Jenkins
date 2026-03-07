@@ -68,6 +68,21 @@
 	<a href="<%=ORSView.QUEUE_LIST_CTL%>"><b>Queue List</b></a> |
 	<a href="<%=ORSView.FAQ_CTL%>"><b>Add Faq</b></a> |
 	<a href="<%=ORSView.FAQ_LIST_CTL%>"><b>Faq List</b></a> |
+	<a href="<%=ORSView.ASSET_CTL%>"><b>Add Asset</b></a> |
+	<a href="<%=ORSView.ASSET_LIST_CTL%>"><b>Asset List</b></a> |
+	<a href="<%=ORSView.CLIENT_CTL%>"><b>Add Client</b></a> |
+	<a href="<%=ORSView.CLIENT_LIST_CTL%>"><b>Client List</b></a> |
+	<a href="<%=ORSView.NOTIFICATION_CTL%>"><b>Add Notification</b></a> |
+	<a href="<%=ORSView.NOTIFICATION_LIST_CTL%>"><b>Notification List</b></a> |
+	<a href="<%=ORSView.HOTELBOOKING_CTL%>"><b>Add HotelBooking</b></a> |
+	<a href="<%=ORSView.HOTELBOOKING_LIST_CTL%>"><b>HotelBooking List</b></a> |
+	<a href="<%=ORSView.TRIP_CTL%>"><b>Add Trip</b></a> |
+	<a href="<%=ORSView.TRIP_LIST_CTL%>"><b>Trip List</b></a> |
+	<a href="<%=ORSView.BROKER_CTL%>"><b>Add Broker</b></a> |
+	<a href="<%=ORSView.BROKER_LIST_CTL%>"><b>Broker List</b></a> |
+	<a href="<%=ORSView.STOCK_CTL%>"><b>Add Stock</b></a> |
+	<a href="<%=ORSView.STOCK_LIST_CTL%>"><b>Stock List</b></a> |
+
 
 
 
