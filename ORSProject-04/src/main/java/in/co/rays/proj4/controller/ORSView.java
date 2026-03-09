@@ -173,4 +173,10 @@ public interface ORSView {
 	
 	public String STOCK_VIEW = PAGE_FOLDER + "/StockView.jsp";
 	public String STOCK_CTL = APP_CONTEXT + "/ctl/StockCtl";
+	
+	public String ONLINE_COURSE_LIST_VIEW1= PAGE_FOLDER + "/OnlineCourseListView.jsp";
+	public String ONLINE_COURSE_LIST_CTL1 = APP_CONTEXT + "/ctl/OnlineCourseListCtl";
+	
+	public String ONLINE_COURSE_VIEW = PAGE_FOLDER + "/OnlineCourseView.jsp";
+	public String ONLINE_COURSE_CTL = APP_CONTEXT + "/ctl/OnlineCourseCtl";
 }
