@@ -84,6 +84,9 @@
 	<a href="<%=ORSView.STOCK_LIST_CTL%>"><b>Stock List</b></a> |
 	<a href="<%=ORSView.ONLINE_COURSE_CTL%>"><b>Add Stock</b></a> |
 	<a href="<%=ORSView.ONLINE_COURSE_LIST_CTL1%>"><b>Stock List</b></a> |
+	<a href="<%=ORSView.DELIVERY_TRACKING_CTL%>"><b>Add Deleviry Tracking</b></a> |
+	<a href="<%=ORSView.DELIVERY_TRACKING_LIST_CTL%>"><b>Delivery Tracking List</b></a> |
+	
 
 
 

@@ -179,4 +179,10 @@ public interface ORSView {
 	
 	public String ONLINE_COURSE_VIEW = PAGE_FOLDER + "/OnlineCourseView.jsp";
 	public String ONLINE_COURSE_CTL = APP_CONTEXT + "/ctl/OnlineCourseCtl";
+	
+	public String DELIVERY_TRACKING_LIST_VIEW= PAGE_FOLDER + "/DeliveryTrackingListView.jsp";
+	public String DELIVERY_TRACKING_LIST_CTL = APP_CONTEXT + "/ctl/DeliveryTrackingListCtl";
+	
+	public String DELIVERY_TRACKING_VIEW = PAGE_FOLDER + "/DeliveryTrackingView.jsp";
+	public String DELIVERY_TRACKING_CTL = APP_CONTEXT + "/ctl/DeliveryTrackingCtl";
 }
